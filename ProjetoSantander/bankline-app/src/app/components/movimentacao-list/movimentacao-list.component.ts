@@ -20,9 +20,9 @@ export class MovimentacaoListComponent implements OnInit {
   listMovimentacoes(): void {
     this.movimentacaoService.list()
     .subscribe(
-        data => {
-          this.movimentacoes = data;
-          console.log(data);
+        dataHora => {
+          this.movimentacoes = dataHora;
+          console.log(dataHora);
         },
         error => {
           console.log(error);
