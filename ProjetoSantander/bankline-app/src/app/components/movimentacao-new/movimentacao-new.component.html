@@ -6,15 +6,17 @@
     <hr class="my-2">
     
     <div class="row g-2">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <label for="iDataHora" class="form-label">Data</label>
-        <input type="date" class="form-control" id="iDataHora">
+        <div class="input-group">
+          <input type="date" class="form-control" id="iDataHora">
+          <span class="input-group-text">📆</span>
+        </div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8">
         <label for="iCorrentista" class="form-label">Correntista</label>
-        <select id="iCorrentista" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
+        <select id="iCorrentista" [(ngModel)]="correntista" class="form-select">
+          <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf}}-{{c.nome}}</option>
         </select>
       </div>
       <div class="col-12">
@@ -24,13 +26,14 @@
       <div class="col-md-3">
         <label for="iTipo" class="form-label">Tipo Movimentação</label>
         <select id="iTipo" class="form-select">
-          <option selected>Tipos</option>
-          <option>...</option>
+          <option selected>Tipos...</option>
+          <option>RECEITA</option>
+          <option>DESPESA</option>
         </select>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <label for="iValor" class="form-label">R$ Valor</label>
-        <input type="text" class="form-control" id="iValor">
+        <input type="text" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor">
       </div>
       <div class="d-grid gap-2 d-md-flex ">
         <button class="btn btn-danger" type="button">Confirmar</button>
