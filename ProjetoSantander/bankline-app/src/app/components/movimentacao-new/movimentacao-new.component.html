@@ -9,7 +9,7 @@
       <div class="col-md-4">
         <label for="iDataHora" class="form-label">Data</label>
         <div class="input-group">
-          <input type="date" class="form-control" id="iDataHora">
+          <input type="date" [(ngModel)]="dataHora" lass="form-control" id="iDataHora">
           <span class="input-group-text">📆</span>
         </div>
       </div>
@@ -21,11 +21,11 @@
       </div>
       <div class="col-12">
         <label for="iDescricao" class="form-label">Descrição</label>
-        <input type="text" class="form-control" id="iDescricao" placeholder="Informe uma descrição">
+        <input type="text" [(ngModel)]="descricao" class="form-control" id="iDescricao" placeholder="Informe uma descrição">
       </div>
       <div class="col-md-3">
         <label for="iTipo" class="form-label">Tipo Movimentação</label>
-        <select id="iTipo" class="form-select">
+        <select id="iTipo" [(ngModel)]="tipo" class="form-select">
           <option selected>Tipos...</option>
           <option>RECEITA</option>
           <option>DESPESA</option>
@@ -33,10 +33,10 @@
       </div>
       <div class="col-md-3">
         <label for="iValor" class="form-label">R$ Valor</label>
-        <input type="text" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor">
+        <input type="text" [(ngModel)]="valor" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor">
       </div>
       <div class="d-grid gap-2 d-md-flex ">
-        <button class="btn btn-danger" type="button">Confirmar</button>
+        <button class="btn btn-danger" (click)="save()" type="button">Confirmar</button>
         <a routerLink="/movimentacoes" class="btn btn-outline-danger">Cancelar</a>
       </div>
 
