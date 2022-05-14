@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container-fluid">
 
   <div class="jumbotron">
     <h1 class="display-6">Movimentação</h1>
     <p class="lead-1">Inclusão de uma nova movimentação</p>
     <hr class="my-2">
     
-    <div class="row g-2">
+    <div class="row g-4">
       <div class="col-md-4">
         <label for="iDataHora" class="form-label">Data</label>
         <div class="input-group">
-          <input type="date" [(ngModel)]="dataHora" lass="form-control" id="iDataHora">
+          <input type="date" [(ngModel)]="dataHora" class="form-control" id="iDataHora">
           <span class="input-group-text">📆</span>
         </div>
       </div>
@@ -19,9 +19,9 @@
           <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf}}-{{c.nome}}</option>
         </select>
       </div>
-      <div class="col-12">
+      <div class="col-md-13">
         <label for="iDescricao" class="form-label">Descrição</label>
-        <input type="text" [(ngModel)]="descricao" class="form-control" id="iDescricao" placeholder="Informe uma descrição">
+        <input type="text" [(ngModel)]="descricao" class="form-control form-control-lg" id="iDescricao" placeholder="Informe uma descrição">
       </div>
       <div class="col-md-3">
         <label for="iTipo" class="form-label">Tipo Movimentação</label>
