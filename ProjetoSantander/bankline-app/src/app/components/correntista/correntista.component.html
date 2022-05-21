@@ -1,0 +1,64 @@
+<!-- Alert -->
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Sucesso!</strong> Correntista salvo com sucesso ✅ 
+  <button (click)="closeAlert()" type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!-- Header -->
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="display-6">Correntistas</h1>
+    <p class="lead-1">Cadastro de correntista</p>
+    <a class="btn btn-outline-danger" routerLink="/movimentacoes-new">Nova Movimentação</a>
+    <hr class="my-2">
+  </div>
+
+  <!-- Criar novo Correntista -->
+  <div class="row g-2">
+    <div class="col-md-2">
+      <input  class="form-control" id="iCpf" [(ngModel)]="cpf" mask="000.000.000-00" placeholder="CPF">
+    </div>
+    <div class="col-7">
+      <input type="text"  class="form-control" id="iNome" [(ngModel)]="nome" placeholder="Nome do Correntista">
+    </div>
+    <div class="col-3">
+    <div class="d-grid gap-2 d-md-flex ">
+        <button class="btn btn-danger me-md-2" type="button" (click)="save()" >Salvar</button>
+        <a routerLink="/movimentacoes" class="btn btn-outline-danger">Voltar</a>
+      </div>
+    </div>
+  </div>
+  <p></p>
+
+  <!-- Cards dos Correntistas -->
+  <div class="card-columns">
+    <div *ngFor="let item of correntistas; index as i" class="card border-secondary mb-3" style="width: 18rem;">
+      <div class="card-header">{{item.nome}}</div>
+      <div class="card-body">
+        <h4 class="card-title">CPF {{item.cpf | mask:'000.000.000-00'}}</h4>
+        <p class="card-text">Conta N° {{item.conta.numero}}</p>
+        <p class="card-text">Saldo {{item.conta.saldo | currency:'BRL'}}</p>
+          <button class="btn btn-outline-danger" (click)="delete(item.id)" type="button" >Excluir</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button open modal -->
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+
+<!-- Modal -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>

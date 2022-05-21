@@ -14,4 +14,12 @@ export class CorrentistaService {
   list(): Observable<any> {
     return this.http.get(`${baseUrl}/correntistas`);
   }
+
+ create(correntista:any): Observable<any> {
+    return this.http.post(`${baseUrl}/correntistas`,correntista);
+  }
+
+  delete(id:any): Observable<any> {
+    return this.http.delete(`${baseUrl}/correntistas/delete/${id}`, id)
+  }
 }  

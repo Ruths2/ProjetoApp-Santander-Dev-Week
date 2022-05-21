@@ -15,6 +15,14 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { CorrentistaComponent } from './components/correntista/correntista.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 registerLocaleData(localePt);
 
@@ -22,7 +30,8 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     MovimentacaoListComponent,
-    MovimentacaoNewComponent
+    MovimentacaoNewComponent,
+    CorrentistaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +39,13 @@ registerLocaleData(localePt);
     NgbModule,
     FormsModule,
     HttpClientModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    ModalModule.forRoot(),
+    BrowserAnimationsModule,
+    NgxMaskModule.forRoot(maskConfig)
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

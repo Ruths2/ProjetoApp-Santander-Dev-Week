@@ -9,7 +9,7 @@
     <p class="lead-1">Listagem das movimentações por correntista</p>
     <div class="input-group">
       <select  id="iCorrentista" [(ngModel)]="correntista" class="form-select">
-        <option *ngFor="let c of correntistas" [ngValue]="c" >{{c.cpf}}-{{c.nome}}</option>
+      <option *ngFor="let c of correntistas" [ngValue]="c" >{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} </option>
       </select>
         <button class="btn btn-outline-danger me-md-2 btn-sm" type="button" (click)="listMovimentacoes()">Buscar</button>
 

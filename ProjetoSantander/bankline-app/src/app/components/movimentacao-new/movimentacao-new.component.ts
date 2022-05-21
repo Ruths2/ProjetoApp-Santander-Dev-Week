@@ -8,6 +8,9 @@ import { MovimentacaoService } from 'src/app/services/movimentacao.service';
   styleUrls: ['./movimentacao-new.component.css']
 })
 export class MovimentacaoNewComponent implements OnInit {
+
+  alert:boolean=false;
+
   correntistas:any;
   correntista:any;
 
@@ -24,6 +27,11 @@ export class MovimentacaoNewComponent implements OnInit {
   ngOnInit(): void {
     this.exibirCorrentistas();
   }
+
+  closeAlert(){
+    this.alert=false;
+  }
+
   exibirCorrentistas(): void {
     this.correntistaService.list()
       .subscribe(
@@ -51,6 +59,7 @@ export class MovimentacaoNewComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          this.alert=true;
         },
         error => {
           console.log(error);
