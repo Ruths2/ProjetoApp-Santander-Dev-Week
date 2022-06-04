@@ -7,7 +7,7 @@ import { MovimentacaoListComponent } from './components/movimentacao-list/movime
 import { MovimentacaoNewComponent } from './components/movimentacao-new/movimentacao-new.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LOCALE_ID } from '@angular/core';
@@ -18,7 +18,7 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 import { CorrentistaComponent } from './components/correntista/correntista.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -38,12 +38,14 @@ registerLocaleData(localePt);
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CurrencyMaskModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
-    NgxMaskModule.forRoot(maskConfig)
+    NgxMaskModule.forRoot(maskConfig),
   ],
+
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })

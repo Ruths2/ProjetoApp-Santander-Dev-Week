@@ -6,12 +6,17 @@
     <a class="btn btn-outline-danger" routerLink="/correntistas">Novo Correntista</a>
     <br>
     <hr class="my-3">
-    <p class="lead-1">Listagem das movimentações por correntista</p>
+    <p class="lead-1">* Listagem das movimentações por correntista</p>
     <div class="input-group">
-      <select  id="iCorrentista" [(ngModel)]="correntista" class="form-select">
-      <option *ngFor="let c of correntistas" [ngValue]="c" >{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} </option>
-      </select>
-        <button class="btn btn-outline-danger me-md-2 btn-sm" type="button" (click)="listMovimentacoes()">Buscar</button>
+      <div class="col">
+        <div class="form-floating">
+          <select  id="iCorrentista" [(ngModel)]="correntista" class="form-select">
+          <option *ngFor="let c of correntistas" [ngValue]="c" >{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} </option>
+          </select>
+          <label for="iCorrentista">Correntistas...</label>
+        </div>
+      </div>
+      <button class="btn btn-outline-danger me-md-2 btn-sm" type="button" (click)="listMovimentacoes()">Buscar</button>
 
     <table class="table table-striped">
         <thead>

@@ -5,3 +5,18 @@
 .btn-outline-danger {
   color: #ec0000;
 }
+
+.lead-2 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.textValor, .textDesc {
+  color: #696969;
+}
+
+.btnVoltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

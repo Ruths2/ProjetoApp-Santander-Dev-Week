@@ -5,3 +5,8 @@
 .btn-outline-danger {
   color: #ec0000;
 }
+
+.lead-1 {
+  padding-left: 30px;
+  padding-right: 30px;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CorrentistaService } from 'src/app/services/correntista.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-correntista',
@@ -11,16 +12,20 @@ export class CorrentistaComponent implements OnInit {
 
   modalRef?: BsModalRef;
 
-  alert:boolean=false;
+  message?: string;
 
+  alert:boolean=false;
+  
   cpf:any;
   nome:any;
   correntistas:any;
-  correntista:any;
+  correntista: any;
 
   constructor(
+    private formBuilder: FormBuilder,
     private correntistaService: CorrentistaService,
     private modalService: BsModalService
+
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +53,7 @@ export class CorrentistaComponent implements OnInit {
       cpf:this.cpf,
       nome:this.nome
     };
+
     console.log(correntista);
     this.correntistaService.create(correntista)
       .subscribe(
@@ -56,6 +62,7 @@ export class CorrentistaComponent implements OnInit {
           this.alert=true;
           this.exibirCorrentistas();
         },
+
         error => {
           console.log(error);
         });
@@ -74,7 +81,7 @@ export class CorrentistaComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template)
   }
 
 }

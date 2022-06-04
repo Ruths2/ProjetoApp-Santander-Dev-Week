@@ -1,9 +1,17 @@
+<!-- icon sucess -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+</svg>
+
 <!-- Alert -->
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Sucesso!</strong> Movimentação realizada com sucesso ✅ 
-  <button (click)="closeAlert()" type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+    <strong>Sucesso!</strong> Movimentação realizada com sucesso.
+    <button type="button" class="btn-close" (click)="closeAlert()" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 </div>
 
 <!-- Header -->
@@ -11,50 +19,63 @@
   <div class="jumbotron">
     <h1 class="display-6">Movimentação</h1>
     <p class="lead-1">Inclusão de uma nova movimentação</p>
-    <hr class="my-2">
-
-<!-- Formulario para nova movimentação -->
-    <div class="row g-4">
-      <div class="col-md-4">
-        <label for="iDataHora" class="form-label">Data</label>
-        <div class="input-group">
-          <input type="date" [(ngModel)]="dataHora" class="form-control" id="iDataHora">
-          <span class="input-group-text">📆</span>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <label for="iCorrentista" class="form-label">Correntista</label>
-        <select id="iCorrentista" [(ngModel)]="correntista" class="form-select">
-          <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} - {{c.conta.saldo | currency:'BRL'}}</option>
-        </select>
-      </div>
-      <div class="col-md-13">
-        <label for="iDescricao" class="form-label">Descrição</label>
-        <input type="text" [(ngModel)]="descricao" class="form-control form-control-lg" id="iDescricao" placeholder="Informe uma descrição">
-      </div>
-      <div class="col-md-3">
-        <label for="iTipo" class="form-label">Tipo Movimentação</label>
-        <select id="iTipo" [(ngModel)]="tipo" class="form-select">
-          <option selected>Tipos...</option>
-          <option>RECEITA</option>
-          <option>DESPESA</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <label for="iValor" class="form-label">R$ Valor</label>
-        <input type="text" [(ngModel)]="valor" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor">
-      </div>
-      <div class="d-grid gap-2 d-md-flex ">
-
-<!-- Botão confimar e voltar -->
-        <button class="btn btn-danger" (click)="save()" type="button">Confirmar</button>
-        <a routerLink="/movimentacoes" class="btn btn-outline-danger">Voltar</a>
-      </div>
-
+    <div class="col">
+      <p class="lead-2">* Preencha os campos abaixo para criar um novo correntista</p>
+    <div class="col">
+      <a class="btn btn-outline-danger" routerLink="/correntistas">Novo Correntista</a>
     </div>
 
+    <hr class="my-2">
+
+  <!-- Form new movimentação -->
+    <div class="row g-4">
+      <div class="input-group">
+        <div class="col-md-2">
+          <div class="form-floating">
+            <input type="date" [(ngModel)]="dataHora" class="form-control" id="iDataHora">
+            <label for="iDataHora" class="textData">Data</label>
+          </div>
+        </div>
+        <span class="input-group-text">📆</span>
+      </div>
+      <div class="col-md-5">
+        <div class="form-floating">
+          <select id="iCorrentista" [(ngModel)]="correntista" class="form-select">
+            <option selected>Correntistas...</option>
+            <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} - {{c.conta.saldo | currency:'BRL'}}</option>
+          </select>
+          <label for="iCorrentista" class="textCorr">Correntista</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="text" [(ngModel)]="descricao" class="form-control form-control-lg" id="iDescricao" placeholder="Informe uma descrição">
+          <label for="iDescricao" class="textDesc">Descrição</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-floating">
+          <select id="iTipo" [(ngModel)]="tipo" class="form-select">
+            <option selected>Tipo...</option>
+            <option>RECEITA</option>
+            <option>DESPESA</option>
+          </select>
+          <label for="iTipo" class="textTipo">Tipo Movimentação</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" [(ngModel)]="valor" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor" placeholder="Valor">
+          <label for="iValor" class="textValor">R$ Valor</label>
+        </div>
+      </div>
+
+    <!-- Buttons confimar/voltar -->
+      <div class="d-grid gap-2 d-md-flex col">
+        <button class="btn btn-danger" (click)="save()" type="button">Confirmar</button>
+        <a routerLink="/movimentacoes" class="btn btnVoltar btn-outline-danger">Voltar</a>
+      </div>
+      <hr class="my-2">
+    </div>
   </div>
-
 </div>
-
-

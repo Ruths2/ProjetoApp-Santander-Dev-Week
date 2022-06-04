@@ -5,3 +5,28 @@
 .btn-outline-danger {
   color: #ec0000;
 }
+
+.btn-new-movimentacao {
+  font-size: 15.2px;
+  margin-left: 13px;
+}
+
+.btn-excluir-correntistas {
+  font-size: 15.2px;
+}
+
+.btn-voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lead-2 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.textCpf, .textNome {
+  color: #696969;
+
+}
