@@ -19,6 +19,9 @@ import { CorrentistaComponent } from './components/correntista/correntista.compo
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -44,6 +47,9 @@ registerLocaleData(localePt);
     ModalModule.forRoot(),
     BrowserAnimationsModule,
     NgxMaskModule.forRoot(maskConfig),
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
 
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],

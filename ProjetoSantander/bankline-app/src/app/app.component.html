@@ -44,8 +44,8 @@
     align-items: center;
     background-color: #ec0000;
     color: white;
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 500;
+    font-size: 25px;
     padding-left: 10px;
   }
 
@@ -306,14 +306,18 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-<!--
-   -   <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-   -   <mat-menu #menu="matMenu">
-   -     <button mat-menu-item>Item 1</button>
-   -     <button mat-menu-item>Item 2</button>
-   -   </mat-menu>
-   - 
-   -->
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/movimentacoes">Lista de Movimentações</button>
+    <button mat-menu-item routerLink="/movimentacoes-new">Nova Movimentação</button>
+    <button mat-menu-item routerLink="/correntistas">Novo Correntista</button>
+  </mat-menu>
+
+  <p></p>
 
   <span> {{ title }} </span>
   <div class="spacer"></div>

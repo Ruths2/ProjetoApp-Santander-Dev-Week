@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = (String.fromCodePoint( 0x2668 )) + ' Santander Bankline';
+  title = 'Santander Bankline ' + ( String.fromCodePoint( 0x2668 )) ;
 }
