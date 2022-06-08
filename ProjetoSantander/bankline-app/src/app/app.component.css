@@ -3,6 +3,11 @@
   padding-left: 10px;
 }
 
+.bi {
+  color: white;
+  padding-right: 5px;
+}
+
 .mat-sidenav-container {
   height: 100%;
   padding: 10px;
