@@ -1,3 +1,44 @@
-.mat-icon-button {
-  padding-right: 18px;
+.icone-menu {
+  color: white;
+  padding-left: 10px;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+  padding: 10px;
+}
+
+.mat-sidenav {
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  width: auto;
+}
+
+.lista-menu-li{
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+a.text:hover {
+  color: red;
+}
+
+.text-home {
+  color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.menu-sidenav {
+  padding-top: 7%;
+  padding-bottom: 7%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  background-color: #ec0000;
+  margin-bottom: 10px;
 }

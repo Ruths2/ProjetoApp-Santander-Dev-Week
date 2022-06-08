@@ -22,6 +22,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -49,7 +50,8 @@ registerLocaleData(localePt);
     NgxMaskModule.forRoot(maskConfig),
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule
   ],
 
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],

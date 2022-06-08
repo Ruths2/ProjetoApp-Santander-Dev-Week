@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Santander Bankline ' + ( String.fromCodePoint( 0x2668 )) ;
+  
+  opened= false;
+
 }
