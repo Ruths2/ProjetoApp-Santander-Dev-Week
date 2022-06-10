@@ -23,6 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { HomeComponent } from './components/home/home.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -35,7 +36,8 @@ registerLocaleData(localePt);
     AppComponent,
     MovimentacaoListComponent,
     MovimentacaoNewComponent,
-    CorrentistaComponent
+    CorrentistaComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
