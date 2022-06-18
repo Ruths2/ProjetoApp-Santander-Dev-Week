@@ -1,12 +1,4 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!-- Tollbar -->
 <mat-sidenav-container>
   <mat-sidenav-content>
     <div class="toolbar" role="banner">
@@ -40,74 +32,79 @@
       <div class="icone-menu">
         <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
       </div>
-      <a class="text-white" (click)="sidenav.close()" routerLink="/home">Home</a>
+      <div class="top-home">
+        <a href="http://localhost:4200/home" (click)="sidenav.close()">Home</a>
+      </div>
     </div>
-    <!-- <hr class="my-2"> -->
     <p></p>
-    <ul>
-        <li class="lista-menu-li">
-          <a class="text-dark" (click)="sidenav.close()" routerLink="/movimentacoes">Lista de Movimentações</a>
-        </li>
-        <p></p>
-        <li class="lista-menu-li">
-          <a class="text-dark" (click)="sidenav.close()" routerLink="/movimentacoes-new">Nova Movimentação</a>
-        </li>
-        <p></p>
-        <li class="lista-menu-li">
-          <a class="text-dark" (click)="sidenav.close()" routerLink="/correntistas">Novo Correntista</a>
-        </li>
-        <p></p>
-    </ul>
+    <div class="lista-menu">
+      <ul class="ul">
+        <li><a href="http://localhost:4200/movimentacoes" (click)="sidenav.close()">Lista de Movimentações</a></li>
+        <li><a href="http://localhost:4200/movimentacoes-new" (click)="sidenav.close()">Nova Movimentação</a></li>
+        <li><a href="http://localhost:4200/correntistas" (click)="sidenav.close()">Novo Correntista</a></li>
+      </ul>
+    </div>
     <hr class="my-2">
+    
   </mat-sidenav>
 </mat-sidenav-container>
+<!-- End Toolbar -->
 
 <!-- Footer -->
-<footer class="container-fluid text-white bg-dark">
-  <div class="row pt-5 pb-5">
-    <section class="col-md-5">
-      <h5>Album</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">Baby</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">Models</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">Family</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="col-md-5">
-      <h5>Contato</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a href="tel:+5513111111111" class="nav-link text-white">
-            Tel: (13) 9 9999-9999
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="https://api.whatsapp.com/send?phone=5513999999999&text=Quero%20saber%20mais%20sobre%20o%20Curso!" target="_blank" class="nav-link text-white">
-            WhatsApp:(13) 9 9999-9999
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="col-md-2">
-      <a href="#" class="text-white">Voltar ao Top!</a>
-    </section>
+<footer class="footer">
+  <div class="w3-container">
+    <div class="row g-1">
+      <div class="col-md-4">
+        <div class="text-p">
+          <h4><strong>Sobre nós</strong></h4>
+          <p>
+            <strong>Perfil Corporativo:</strong> Somos o terceiro maior banco privado no Brasil e o único banco internacional com escala no país.
+          </p>
+          <p>
+            <strong>Nosso Propósito:</strong> Ser a melhor plataforma aberta de serviços financeiros, atuando de forma responsável e ganhando a confiança e fidelidade dos nossos colaboradores, clientes, acionistas e da sociedade.
+          </p>
+        </div>
+      </div>
+      <hr class="clearfix d-md-none p-auto">
+      <div class="vr p-auto"></div>
+      <div class="col-md-2">
+        <div class="colunas">
+          <h4><strong>Serviços</strong></h4>
+          <ul class="ul">
+            <li><a href="http://localhost:4200/correntistas">Correntistas</a></li>
+            <li><a href="http://localhost:4200/movimentacoes" >Movimentações</a></li>
+            <li><a href="http://localhost:4200/movimentacoes-new">Criar Movimentações</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="colunas">
+          <h4><strong>Contatos</strong></h4>
+          <ul class="ul">
+            <li><a href="tel:+5513999999999">Tel: (13)99999-9999</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=5513999999999">Whats: (13)99999-9999</a></li>
+            <li><a href="mailto:contato@contato">E-mail: contato@contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="colunas">
+          <h4><strong>Redes Socias</strong></h4>
+          <div class="redes-sociais">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="colunas">
+          <div class="home">
+            <h4><a href="#"><strong>Voltar ao Topo</strong></a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!-- End Footer -->

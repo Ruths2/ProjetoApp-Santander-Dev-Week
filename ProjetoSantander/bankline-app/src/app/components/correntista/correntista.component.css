@@ -6,7 +6,6 @@
   color: #ec0000;
 }
 
-
 .btn-excluir-correntistas {
   font-size: 15.2px;
 }
@@ -24,5 +23,20 @@
 
 .textCpf, .textNome {
   color: #696969;
+}
 
+hr {
+  color: #ec0000;
+}
+
+.formCorrentista {
+  margin-bottom: 3%;
+}
+
+.cardCorrentista {
+  width: 15rem;
+}
+
+.card-header {
+  background-color: aliceblue;
 }

@@ -1,9 +1,10 @@
-<!-- icon sucess -->
+<!-- Check-Circle-Fill Alert -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
   </symbol>
 </svg>
+<!-- End Check-Circle-Fill Alert -->
 
 <!-- Alert -->
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -13,17 +14,21 @@
     <button type="button" class="btn-close" (click)="closeAlert()" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 </div>
+<!-- End Alert -->
 
-<!-- Header -->
+<!-- Content Movimentacao-New Component -->
 <div class="container-fluid">
   <div class="jumbotron">
+
+    <!-- Header -->
     <h1 class="display-6">Movimentação</h1>
     <p class="lead-1">Inclusão de uma nova movimentação</p>
     <div class="col">
       <p class="lead-2">* Preencha os campos abaixo para criar um novo correntista</p>
     <hr class="my-2">
+    <!-- End Header -->
 
-  <!-- Form new movimentação -->
+    <!-- Form New Movimentação -->
     <div class="row g-4">
       <div class="input-group">
         <div class="col-md-2">
@@ -65,13 +70,18 @@
           <label for="iValor" class="textValor">R$ Valor</label>
         </div>
       </div>
-
-    <!-- Buttons confimar/voltar -->
+      
+      <!-- Buttons Confimar/Voltar -->
       <div class="d-grid gap-2 d-md-flex col">
         <button class="btn btn-danger" (click)="save()" type="button">Confirmar</button>
-        <a routerLink="/movimentacoes" class="btn btnVoltar btn-outline-danger">Voltar</a>
+        <a routerLink="/home" class="btn btnVoltar btn-outline-danger">Voltar</a>
       </div>
       <hr class="my-2">
+      <!-- End Buttons Confirmar/Voltar -->
+
     </div>
+    <!-- End Form New Movimentacao -->
+
   </div>
 </div>
+<!-- End Content Movimentacao-New Component -->

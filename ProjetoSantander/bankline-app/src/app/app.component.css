@@ -1,3 +1,4 @@
+/* Toolbar CSS */
 .icone-menu {
   color: white;
   padding-left: 10px;
@@ -10,7 +11,7 @@
 
 .mat-sidenav-container {
   height: 100%;
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .mat-sidenav {
@@ -21,24 +22,40 @@
   width: auto;
 }
 
-.lista-menu-li{
-  padding: 10px;
-  font-size: 16px;
-}
-
-a.text-dark:hover {
-  text-decoration: underline;
-}
-
-a.text-white:hover {
-	text-decoration: underline;
-  text-overflow: ellipsis;
-}
-
-.text-white {
+.top-home {
   margin-top: 5px;
   margin-left: 10px;
   font-size: 20px;
+}
+
+.top-home a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-home a:hover {
+  color: #bbbbbb;
+}
+
+.lista-menu ul {
+ margin: 15px 15px 10px 10px;
+ font-size: 16px;
+}
+
+.lista-menu ul li {
+  padding-bottom: 10px;
+}
+
+.lista-menu ul li a {
+  text-decoration: none;
+  color: dimgray;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.lista-menu ul li a:hover {
+  color: #ec0000;
+  padding-left: 8px;
 }
 
 .menu-sidenav {
@@ -68,7 +85,7 @@ a.text-white:hover {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 10px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -79,14 +96,130 @@ a.text-white:hover {
   padding-left: 10px;
   padding: 10px;
 }
+/* End Toolbar CSS */
 
-
+/* Content CSS */
 .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  margin: 0;
+  margin-top: 55px;
+  padding: 10px;
+  padding-top: 0;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+/* End Content CSS */
 
+/* Footer CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: white;
+  padding: 10px;
+  position: relative;
+}
+
+.vr {
+  padding: 0.5px
+}
+
+.w3-container {
+  background-color: #ec0000;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ul {
+  list-style: none;
+}
+
+.text-p {
+  color: white;
+  font-size: 17px;
+}
+
+.text-p, .colunas {
+  /* background-color: cyan; */
+  /* border-style: dashed; */
+  margin: 20px;
+}
+
+.text-p h4, .colunas h4 {
+  font-size: 19px;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+}
+
+.text-p h4::before, .colunas h4::before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: white;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.colunas ul li {
+  margin-bottom: 10px;
+}
+
+.colunas ul li a {
+  font-size: 17px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #bbbbbb;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+}
+.colunas ul li a:hover {
+  color: white;
+  padding-left: 8px;
+}
+
+.colunas .redes-sociais a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255,255,255,0.2);
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 50px;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.colunas .redes-sociais a:hover {
+  color: #24262b;
+  background-color: white;
+}
+
+.home {
+  text-align: end;
+}
+
+.colunas .home h4::before {
+  left: auto;
+  right: 73px;
+}
+
+.home a {
+  text-decoration: none;
+  color: white;
+}
+
+.home a:hover {
+  color: #bbbbbb;
+}
+/* End Footer CSS */

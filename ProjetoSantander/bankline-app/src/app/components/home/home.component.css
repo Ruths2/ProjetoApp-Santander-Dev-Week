@@ -1,0 +1,39 @@
+.bi {
+  color: red;
+}
+
+.legenda h1 {
+  font-size: 19px;
+  font-weight: 550;
+}
+
+.legenda p {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.carousel img {
+  height: 34%;
+}
+
+.carousel {
+  margin-bottom: 5%;
+}
+
+.cardServices {
+  width: 15rem;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.cardCycles {
+  margin-top: 5%;
+}
+
+.cardCycles, .cardFarol {
+  width: 100%;
+}
+
+hr {
+  color: #ec0000;
+}

@@ -1,11 +1,16 @@
+<!-- Content Movimentacao-List Component -->
 <div class="container-fluid">
-  <div class="jumbotron">
 
+  <!-- Header -->
+  <div class="jumbotron">
     <h1 class="display-6">Movimentações</h1>
     <hr class="my-3">
     <p class="lead-1">* Listagem das movimentações por correntista</p>
-    <div class="input-group">
-      <div class="col">
+  <!-- End Header -->
+
+    <!-- Search Correntistas -->
+    <div class="row g-4">
+      <div class="col-md-9">
         <div class="form-floating">
           <select  id="iCorrentista" [(ngModel)]="correntista" class="form-select">
           <option *ngFor="let c of correntistas" [ngValue]="c" >{{c.cpf | mask:'000.000.000/00'}} - {{c.nome}} </option>
@@ -13,27 +18,39 @@
           <label for="iCorrentista">Correntistas...</label>
         </div>
       </div>
-      <button class="btn btn-outline-danger me-md-2 btn-sm" type="button" (click)="listMovimentacoes()">Buscar</button>
+      <!-- End Search Correntistas -->
 
-    <table class="table table-striped">
+      <!-- Buttons Buscar/Voltar -->
+      <div class="d-grid gap-2 d-md-flex col">
+        <button class="btn btn-danger" type="button" (click)="listMovimentacoes()">Buscar</button>
+        <a routerLink="/home" class="btn btn-outline-danger btn-voltar">Voltar</a>
+      </div>
+      <!-- End Buttons Buscar/Voltar -->
+
+      <!-- Table Movimentações -->
+      <table class="table table-striped">
         <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Data Hora</th>
-          <th scope="col">Descrição</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Tipo</th>
-        </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Data Hora</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Tipo</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let item of movimentacoes; index as i">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>{{ item.dataHora | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
-          <td>{{ item.descricao }}</td>
-          <td [ngStyle]="{'color':item.tipo === 'RECEITA' ? 'blue' : 'red'}">{{ item.valor | currency:'BRL'  }}</td>
-          <td>{{ item.tipo }}</td>
-        </tr>
+          <tr *ngFor="let item of movimentacoes; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.dataHora | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+            <td>{{ item.descricao }}</td>
+            <td [ngStyle]="{'color':item.tipo === 'RECEITA' ? 'blue' : 'red'}">{{ item.valor | currency:'BRL'  }}</td>
+            <td>{{ item.tipo }}</td>
+          </tr>
         </tbody>
       </table>
+      <!-- End Table Movimentações -->
+
     </div>
   </div>
+</div>
+<!-- End Content Movimentacao-List Component -->

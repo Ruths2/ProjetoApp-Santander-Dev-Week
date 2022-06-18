@@ -6,7 +6,17 @@
   color: #ec0000;
 }
 
+.btn-voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lead-1 {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+hr {
+  color: #ec0000;
 }

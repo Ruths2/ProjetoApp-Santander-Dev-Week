@@ -24,6 +24,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './components/home/home.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -53,7 +54,8 @@ registerLocaleData(localePt);
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    CarouselModule.forRoot()
   ],
 
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],

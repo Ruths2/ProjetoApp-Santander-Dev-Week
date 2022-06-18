@@ -1,8 +1,10 @@
+<!-- Check-Circle-Fill  Alert -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
   </symbol>
 </svg>
+<!-- End Check-Circle-Fill Alert -->
 
 <!-- Alert -->
 <div *ngIf="alert" class="alert alert-success alert-dismissible d-flex fade show" role="alert">
@@ -12,17 +14,21 @@
     <button type="button" class="btn-close" (click)="closeAlert()" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 </div>
+<!-- End Alert -->
 
-<!-- Header -->
+<!-- Content Correntista Component -->
 <div class="container-fluid">
   <div class="jumbotron">
+
+    <!-- Header -->
     <h1 class="display-6">Correntistas</h1>
     <p class="lead-1">Cadastro de correntista</p>
     <p class="lead-2">* Preencha os campos abaixo para criar um novo correntista</p>
     <hr class="my-2">
+    <!-- End Header -->
 
-  <!-- Create new Correntista -->
-    <div class="row g-4">
+    <!-- Create New Correntista -->
+    <div class="row g-4 formCorrentista">
       <div class="col-md-3">
         <div class="form-floating">
           <input class="form-control" name="cpf" id="iCpf" [(ngModel)]="cpf" mask="000.000.000-00" placeholder="CPF">
@@ -36,33 +42,41 @@
         </div>
       </div>
 
-    <!-- Buttons salvar/voltar -->
+      <!-- Buttons Salvar/Voltar -->
       <div class="d-grid gap-2 d-md-flex col">
         <button class="btn-salvar btn btn-danger" type="button" (click)="save()" >Salvar</button>
-      <a routerLink="/movimentacoes" class="btn btn-outline-danger btn-voltar">Voltar</a>
+      <a routerLink="/home" class="btn btn-outline-danger btn-voltar">Voltar</a>
       </div>
       <hr class="my-2">
+      <!-- End Buttons Salvar/Voltar -->
 
-    <!-- Buttons excluir correntistas -->
+      <!-- Button Excluir Correntistas -->
       <div>
         <button class="btn btn-outline-danger btn-excluir-correntistas" (click)="openModal(template)" type="button" >Excluir Correntistas</button>
       </div>
+    </div>
+  </div>
+  <!-- End Button Excluir Correntistas -->
 
-
-    <!-- Cards from Correntistas -->
-      <div class="card-columns">
-        <div *ngFor="let item of correntistas; index as i" class="card border-secondary mb-3" style="width: 18rem;">
-          <div class="card-header">{{item.nome}}</div>
-          <div class="card-body">
-            <h4 class="card-title">CPF {{item.cpf | mask:'000.000.000-00'}}</h4>
-            <p class="card-text">Conta N° {{item.conta.numero}}</p>
-            <p class="card-text">Saldo {{item.conta.saldo | currency:'BRL'}}</p>
-          </div>
+  <!-- Cards From Correntistas -->
+  <div  class="row row-cols-1 row-cols-md-3 g-2">
+    <div *ngFor="let item of correntistas; index as i" class="col">
+      <div class="card mx-auto text-center cardCorrentista">
+        <div class="card-header">{{item.nome}}</div>
+        <div class="card-body">
+          <h4 class="card-title">CPF {{item.cpf | mask:'000.000.000-00'}}</h4>
+          <p class="card-text">Conta N° {{item.conta.numero}}</p>
+          <p class="card-text">Saldo {{item.conta.saldo | currency:'BRL'}}</p>
         </div>
       </div>
     </div>
   </div>
+  <!-- End Cards From Correntistas  -->
+
+  <!-- End Create New Correntista  -->
+
 </div>
+<!-- End Content Correntista Component -->
 
 <!-- Modal -->
 <ng-template #template>
@@ -82,3 +96,4 @@
     <button type="button" (click)="modalRef?.hide()" class="btn btn-danger" >Cancelar</button>
   </div>
 </ng-template>
+<!-- End Modal -->
