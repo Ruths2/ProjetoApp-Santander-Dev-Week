@@ -33,15 +33,15 @@
         <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
       </div>
       <div class="top-home">
-        <a href="http://localhost:4200/home" (click)="sidenav.close()">Home</a>
+        <a routerLink="/home" (click)="sidenav.close()">Home</a>
       </div>
     </div>
     <p></p>
     <div class="lista-menu">
       <ul class="ul">
-        <li><a href="http://localhost:4200/movimentacoes" (click)="sidenav.close()">Lista de Movimentações</a></li>
-        <li><a href="http://localhost:4200/movimentacoes-new" (click)="sidenav.close()">Nova Movimentação</a></li>
-        <li><a href="http://localhost:4200/correntistas" (click)="sidenav.close()">Novo Correntista</a></li>
+        <li><a routerLink="/movimentacoes" (click)="sidenav.close()">Lista de Movimentações</a></li>
+        <li><a routerLink="/movimentacoes-new" (click)="sidenav.close()">Nova Movimentação</a></li>
+        <li><a routerLink="/correntistas" (click)="sidenav.close()">Novo Correntista</a></li>
       </ul>
     </div>
     <hr class="my-2">
@@ -71,9 +71,9 @@
         <div class="colunas">
           <h4><strong>Serviços</strong></h4>
           <ul class="ul">
-            <li><a href="http://localhost:4200/correntistas">Correntistas</a></li>
-            <li><a href="http://localhost:4200/movimentacoes" >Movimentações</a></li>
-            <li><a href="http://localhost:4200/movimentacoes-new">Criar Movimentações</a></li>
+            <li><a routerLink="/correntistas">Correntistas</a></li>
+            <li><a routerLink="/movimentacoes">Movimentações</a></li>
+            <li><a routerLink="/movimentacoes-new">Criar Movimentações</a></li>
           </ul>
         </div>
       </div>
