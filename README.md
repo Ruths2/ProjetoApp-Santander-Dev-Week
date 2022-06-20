@@ -17,17 +17,35 @@ Obs: Esse projeto foi realizado pelo celular porque não tenho um computador e n
 
 ---
 
-#### Fotos do APP:
+#### Fotos e vídeos do APP:
+
+---
+
 🔸 Heroku:
 <img height= "500" src="" />
 
-🔸 Home:
-<img height= "500" src="" />
+---
+🔸 Home na web do celular:
 
+<img height= "500" src="https://user-images.githubusercontent.com/82623746/174633498-15c84fe2-e6f7-42e3-9a04-c6e5ea1f6cc8.gif" />
+
+---
+🔸 Home modo computador:
+
+<img height= "500" src="https://images2.imgbox.com/98/25/J4DYW7qh_o.png" />
+
+---
 🔸 Correntistas:
-<img height= "500" src="" />
 
+<img height= "500" src="https://images2.imgbox.com/35/57/L5wCUDkp_o.png" />
+
+---
 🔸 Movimentações:
-<img height= "500" src="" />
+
+<img height= "500" src="https://images2.imgbox.com/91/89/gkrMt1vW_o.png" />
+
+---
 
 </div>
+
+
